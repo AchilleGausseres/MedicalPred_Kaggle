@@ -44,9 +44,13 @@ evaluation(data_origin, data_KnnImp[,-(8:14)], m = missing_values,
            vartypes = type)
 evaluation(data_origin, data_IrmiImp[,-(8:14)], m = missing_values, 
            vartypes = type)
+## --------- ##
 
-
+## Final imputation ##
 final_impute <- missRanger(data, 
                            num.trees = 1000, seed=1, pmm.k = 10)
 View(final_impute)
+## --------- ##
+
+save(final_impute, file ="data_imputed.Rdata") 
 
